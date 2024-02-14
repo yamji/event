@@ -157,11 +157,12 @@ function openScreen() {
     const title = document.getElementById('title'); 
 
     if (currentScreen === 0) { 
-        localStorage.setItem('openedOnce', 'true');
-        // "모든 상자를 다 열었습니다." 라는 문구를 제거하고 아래의 코드를 주석 처리합니다.
-        // alert('모든 상자를 다 열었습니다.');
-        giftBox.style.backgroundImage = "none";
-        giftBox.style.backgroundColor = "black"; 
+      localStorage.setItem('openedOnce', 'true');
+
+        // 이미지와 텍스트를 보여주고, 버튼을 누르면 gif를 보여주도록 처리
+        giftBox.style.backgroundImage = "url('box.png')"; // 상자 이미지로 설정
+        openButton.style.opacity = '1'; 
+        title.style.opacity = '1';
     } else {
         localStorage.setItem('openedOnce', 'false');
         giftBox.style.backgroundImage = "url('box.gif')";
